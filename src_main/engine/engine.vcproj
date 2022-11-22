@@ -22,7 +22,7 @@
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
-				CommandLine="if EXIST ..\..\game\bin\$(TargetFileName) for /f &quot;delims=&quot; %%A in (&apos;attrib &quot;..\..\game\bin\$(TargetFileName)&quot;&apos;) do set valveTmpIsReadOnly=&quot;%%A&quot;&#x0D;&#x0A;set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%&#x0D;&#x0A;if &quot;%valveTmpIsReadOnlyLetter%&quot;==&quot;R&quot; del /q &quot;$(TargetDir)&quot;$(TargetFileName)&#x0D;&#x0A;set path=..\..\game\bin;%path%&#x0D;&#x0A;if exist ..\devtools\bin\vpc.exe ..\devtools\bin\vpc.exe -crc engine.vpc 49cc55ee -crc ..\vpc_scripts\source_dll_win32_base.vpc a763463a -crc ..\vpc_scripts\version.vpc 26d8e8a7 -crc ..\vpc_scripts\loadaddress.vpc 49fd4a9f -crc ..\vpc_scripts\source_dll_win32_debug.vpc 5f68c24a -crc ..\vpc_scripts\source_dll_win32_release.vpc 4275ffe4&#x0D;&#x0A;"
+				CommandLine=""
 				ExcludedFromBuild="false"
 			/>
 			<Tool
@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\common;..\public;..\public\tier0;..\public\tier1;.\;audio;audio\private;audio\public;..\vgui2\include;..\vgui2\controls;..\dx9sdk\include"
+				AdditionalIncludeDirectories="C:\Program Files\Microsoft SDKs\Windows\v7.1\Include;..\common;..\public;..\public\tier0;..\public\tier1;.\;audio;audio\private;audio\public;..\vgui2\include;..\vgui2\controls;..\dx9sdk\include"
 				PreprocessorDefinitions="WIN32;_WIN32;_DEBUG;DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;USE_CONVARS;VOICE_OVER_IP;BUMPMAP;__USEA3D;_ADD_EAX_;ENGINE_DLL;PROTECTED_THINGS_ENABLE;fopen=dont_use_fopen"
 				StringPooling="true"
 				MinimalRebuild="true"
@@ -85,7 +85,7 @@
 				OutputFile="$(OutDir)/engine.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="..\lib\common;..\lib\public;..\lib\common\vc7;..\dx9sdk\lib"
+				AdditionalLibraryDirectories="C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib;..\lib\common;..\lib\public;..\lib\common\vc7;..\dx9sdk\lib"
 				GenerateManifest="false"
 				IgnoreDefaultLibraryNames="libc;libcd;libcmt"
 				GenerateDebugInformation="true"
@@ -124,8 +124,8 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				Description="Publishing to ..\..\game\bin"
-				CommandLine="call ..\vpc_scripts\valve_p4_edit.cmd ..\..\game\bin\$(TargetFileName) ..&#x0D;&#x0A;copy &quot;$(TargetDir)&quot;$(TargetFileName) ..\..\game\bin\$(TargetFileName)&#x0D;&#x0A;if ERRORLEVEL 1 goto BuildEventFailed&#x0D;&#x0A;if exist &quot;$(TargetDir)&quot;$(TargetName).map copy &quot;$(TargetDir)&quot;$(TargetName).map ..\..\game\bin\$(TargetName).map&#x0D;&#x0A;call ..\vpc_scripts\valve_p4_edit.cmd ..\..\game\bin\$(TargetName).pdb ..&#x0D;&#x0A;copy &quot;$(TargetDir)&quot;$(TargetName).pdb ..\..\game\bin\$(TargetName).pdb&#x0D;&#x0A;if ERRORLEVEL 1 goto BuildEventFailed&#x0D;&#x0A;goto BuildEventOK&#x0D;&#x0A;:BuildEventFailed&#x0D;&#x0A;echo *** ERROR! PostBuildStep FAILED for $(ProjectName)! EXE or DLL is probably running. ***&#x0D;&#x0A;del /q &quot;$(TargetDir)&quot;$(TargetFileName)&#x0D;&#x0A;exit 1&#x0D;&#x0A;:BuildEventOK&#x0D;&#x0A;"
+				Description=""
+				CommandLine=""
 				ExcludedFromBuild="false"
 			/>
 		</Configuration>
@@ -138,7 +138,7 @@
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
-				CommandLine="if EXIST ..\..\game\bin\$(TargetFileName) for /f &quot;delims=&quot; %%A in (&apos;attrib &quot;..\..\game\bin\$(TargetFileName)&quot;&apos;) do set valveTmpIsReadOnly=&quot;%%A&quot;&#x0D;&#x0A;set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%&#x0D;&#x0A;if &quot;%valveTmpIsReadOnlyLetter%&quot;==&quot;R&quot; del /q &quot;$(TargetDir)&quot;$(TargetFileName)&#x0D;&#x0A;set path=..\..\game\bin;%path%&#x0D;&#x0A;if exist ..\devtools\bin\vpc.exe ..\devtools\bin\vpc.exe -crc engine.vpc 49cc55ee -crc ..\vpc_scripts\source_dll_win32_base.vpc a763463a -crc ..\vpc_scripts\version.vpc 26d8e8a7 -crc ..\vpc_scripts\loadaddress.vpc 49fd4a9f -crc ..\vpc_scripts\source_dll_win32_debug.vpc 5f68c24a -crc ..\vpc_scripts\source_dll_win32_release.vpc 4275ffe4&#x0D;&#x0A;"
+				CommandLine=""
 				ExcludedFromBuild="false"
 			/>
 			<Tool
@@ -159,7 +159,7 @@
 				InlineFunctionExpansion="2"
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				AdditionalIncludeDirectories="..\common;..\public;..\public\tier0;..\public\tier1;.\;audio;audio\private;audio\public;..\vgui2\include;..\vgui2\controls;..\dx9sdk\include"
+				AdditionalIncludeDirectories="C:\Program Files\Microsoft SDKs\Windows\v7.1\Include;..\common;..\public;..\public\tier0;..\public\tier1;.\;audio;audio\private;audio\public;..\vgui2\include;..\vgui2\controls;..\dx9sdk\include"
 				PreprocessorDefinitions="WIN32;_WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;USE_CONVARS;VOICE_OVER_IP;BUMPMAP;__USEA3D;_ADD_EAX_;ENGINE_DLL;PROTECTED_THINGS_ENABLE;fopen=dont_use_fopen"
 				StringPooling="true"
 				ExceptionHandling="0"
@@ -203,7 +203,7 @@
 				OutputFile="$(OutDir)/engine.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="..\lib\common;..\lib\public;..\lib\common\vc7;..\dx9sdk\lib"
+				AdditionalLibraryDirectories="C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib;..\lib\common;..\lib\public;..\lib\common\vc7;..\dx9sdk\lib"
 				GenerateManifest="false"
 				IgnoreDefaultLibraryNames="libc;libcd;libcmtd"
 				GenerateDebugInformation="true"
@@ -244,8 +244,8 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				Description="Publishing to ..\..\game\bin"
-				CommandLine="md ..\..\game\bin&#x0D;&#x0A;call ..\vpc_scripts\valve_p4_edit.cmd ..\..\game\bin\$(TargetFileName) ..&#x0D;&#x0A;copy &quot;$(TargetDir)&quot;$(TargetFileName) ..\..\game\bin\$(TargetFileName)&#x0D;&#x0A;if ERRORLEVEL 1 goto BuildEventFailed&#x0D;&#x0A;if exist &quot;$(TargetDir)&quot;$(TargetName).map copy &quot;$(TargetDir)&quot;$(TargetName).map ..\..\game\bin\$(TargetName).map&#x0D;&#x0A;call ..\vpc_scripts\valve_p4_edit.cmd ..\..\game\bin\$(TargetName).pdb ..&#x0D;&#x0A;copy &quot;$(TargetDir)&quot;$(TargetName).pdb ..\..\game\bin\$(TargetName).pdb&#x0D;&#x0A;if ERRORLEVEL 1 goto BuildEventFailed&#x0D;&#x0A;goto BuildEventOK&#x0D;&#x0A;:BuildEventFailed&#x0D;&#x0A;echo *** ERROR! PostBuildStep FAILED for $(ProjectName)! EXE or DLL is probably running. ***&#x0D;&#x0A;del /q &quot;$(TargetDir)&quot;$(TargetFileName)&#x0D;&#x0A;exit 1&#x0D;&#x0A;:BuildEventOK&#x0D;&#x0A;call ..\devtools\bin\vsign.bat -noforcewritable ..\..\game\bin\$(TargetFileName)&#x0D;&#x0A;"
+				Description=""
+				CommandLine=""
 				ExcludedFromBuild="false"
 			/>
 		</Configuration>
@@ -4755,6 +4755,22 @@
 			<File
 				RelativePath=".\halflife.rc"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCResourceCompilerTool"
+						AdditionalIncludeDirectories="C:\Program Files\Microsoft SDKs\Windows\v7.1\Include"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCResourceCompilerTool"
+						AdditionalIncludeDirectories="C:\Program Files\Microsoft SDKs\Windows\v7.1\Include"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\valve.ico"
